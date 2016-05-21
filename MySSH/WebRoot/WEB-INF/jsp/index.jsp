@@ -5,290 +5,235 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>传智商城</title>
+<meta name="description" content="朴上品牌设计网站" />
+<title>朴上品牌设计－首页</title>
 <link href="${pageContext.request.contextPath}/css/slider.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
 
+
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/css/jquery.bxslider.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/css/share.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/xianshi.js"></script>
+  
+	<!--轮播图的js文件-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $('.bxslider').bxSlider({
+        auto: true, 
+        autoControls: true
+      });
+		});
+	</script>
+
+
+<style>
+div.containor .hotProduct .tabContent {
+	width: 950px;
+	float: left;
+	padding-left: 5px;
+	_padding-left: 2px;
+}
+
+div.containor .hotProduct .tabContent li {
+	float: left;
+	margin-right: -1px;
+	margin-bottom: 10px;
+	_position: relative;
+	border:1px solid #e4e4e4;
+	margin-left: 14px;
+}
+
+div.containor .hotProduct .tabContent li:hover {
+	filter: alpha(opacity = 70);
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+}
+
+div.containor .hotProduct .tabContent img {
+	width: 170px;
+	height: 170px;
+	display: block;
+}
+</style>
 </head>
 <body>
 
-<div class="container header">
-	<div class="span5">
-		<div class="logo">
-			<a href="index.action">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客"/>
-			</a>
-		</div>
+<div class="containor">
+	<!--logo及搜索框-->
+	  <div class="north">
+	  <div class="logo"><a href="index.html"><img src="img/logo.png"></a></div>
+	  <div class="fright">
+	  <form name="form1" id="form1" action="" method="post">
+	  <input type="text" name="k" class="txt">
+	    <a href="" class="searchbtn" onclick="form1.submit();">搜索</a>| <a class="se_english" href="">EN</a>
+	  </form></div>
+	  <div class="clear"></div>
 	</div>
-	<div class="span9">
-<div class="headerAd">
-	<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障"/>
-</div>	
-</div>
-	
-	<%@ include file="menu.jsp" %>
+  <!--分享-->
+  <div class="sns-share"> 
+      <a href="" class="qq"><i class="icon iconfont icon-qq"></i></a>
+      <a href="" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
+      <a href="" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
+  </div>
+     <!--菜单导航条-->
+    <ul class="nav">
+        <li class="li1 len1 nav_li_01"><a href="News.html" t1="News" t2="动态">News</a></li>
+        <li class="li1 len1 nav_li_02"><a href="About.html" t1="About" t2="关于">About</a></li>
+        <li class="li1 arrbox arrbox2 len2 nav_li_03"><a href="index.html" t1="Works" t2="案例">Works</a>
+        <div class="san"></div>
+        <table cellspacing="0" cellpadding="0" class="subnav" border="0">
+      <tbody><tr>
+        <td height="5"></td>
+      </tr>
+      
+      <tr>
+        <td nowrap="nowrap"><a href="Brand.html">品牌案例 Brand Works</a></td>
+      </tr>
+      
+      <tr>
+        <td nowrap="nowrap"><a href="Packing.html">包装 Packing</a></td>
+      </tr>
+      
+      <tr>
+        <td nowrap="nowrap"><a href="Posters.html">海报 Posters</a></td>
+      </tr>
+      
+      <tr>
+        <td nowrap="nowrap"><a href="">书籍 Book</a></td>
+      </tr>
+      
+      
+      <tr>
+        <td height="5"></td>
+      </tr>
+    </tbody></table>
 
-</div>	
+        </li>
+        <li class="li1 len1 nav_li_04"><a href="Partnership.html" t1="Partnership" t2="合作">Partnership</a></li>
+        <li class="li1 len1 nav_li_05"><a href="Contact.html" t1="Contact" t2="联系">Contact</a></li>
+        <li class="li1 len1 nav_li_06"><a href="Member.html" t1="Members" t2="成员">Members</a></li>
+        <li class="li1 len1 nav_li_07"><a href="Recruitment.html" t1="Recruitment" t2="招聘">Recruitment</a></li>
+    </ul>
+    <!--轮播图-->
+    <ul class="bxslider">
+    <li><img src="img/banner01.png" /></li>
+    <li><img src="img/banner01.png" /></li>
+    <li><img src="img/banner01.png" /></li>
+</ul>
 
-<div class="container index">
-		
+    <!--精选案例-->
+    <div class="jingxuan">
+        <h3>Successful  精选案例</h3>
+        <div class="jing_xu"></div>
+            <div id="hotProduct" class="hotProduct clearfix">
+                <ul class="tabContent" style="display: block;">
+					<s:iterator var="p" value="hList">
+						<li>
+							<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
+						</li>
+					</s:iterator>		
+				</ul>
+           </div>
+    </div>
+    <div class="clear"></div>
+    <!--海报欣赏-->
+    <div class="haibao">
+    <h3>Poster  海报欣赏</h3>
+    <div class="hai_xu"></div>
+    <ul class="hai">
+    	<li class="con-two"><a href="work_06.html"><img src="img/p_01.png" alt="">
+         <div class="txt-two">
+          <p class="txt-two_p1">插画设计</p>
+          <p class="txt-two_p2">非攻</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_13.html"><img src="img/p_02.png" alt="">
+          <div class="txt-two">
+          <p class="txt-two_p1">海报设计</p>
+          <p class="txt-two_p2">螺旋纹</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_03.html"><img src="img/p_03.png" alt="">
+         <div class="txt-two">
+          <p class="txt-two_p1">海报设计</p>
+          <p class="txt-two_p2">瓷记，陶瓶</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_02.html"><img src="img/p_04.png" alt="">
+         <div class="txt-two">
+          <h3>海报设计</h3>
+          <p>瓷，China</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_12.html"><img src="img/p_05.png" alt="">
+         <div class="txt-two">
+          <p class="txt-two_p1">海报设计</p>
+          <p class="txt-two_p2">水利万物，道法自然</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_07.html"><img src="img/p_06.png" alt="">
+         <div class="txt-two">
+          <p class="txt-two_p1">插画设计</p>
+          <p class="txt-two_p2">節葬</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_09.html"><img src="img/p_07.png" alt="">
+          <div class="txt-two">
+          <p class="txt-two_p1">插画设计</p>
+          <p class="txt-two_p2">明鬼</p>
+        </div>
+      </a></li>
+    	<li class="con-two"><a href="work_04.html"><img src="img/p_08.png" alt="">
+        <div class="txt-two">
+          <p class="txt-two_p1">海报设计</p>
+          <p class="txt-two_p2">泥像，火车</p>
+        </div>
+      </a></li>
+    </ul>
+    </div>
+    <div class="clear"></div>
+    <!--联系我们-->
+    <div class="lianxi">
+    <h3>Contact  联系我们</h3>
+    <div class="lian_xu"></div>
+    <ul class="lian">
+    	<li>手机：13713785732</li>
+    	<li>QQ:1528590535</li>
+    	<li>weixin:1528590535</li>
+    	<li>邮箱：1528590535@qq.com</li>
+    	<li class="lian_li5">liyufengdesign@foxmail.com</li>
+    	<li>地址：广东省深圳市龙岗区六合路6号多龙玩具厂</li>
+    	<li>邮编：518115</li>
+    	<li>ADD:Shenzhen city Longgang District Road No. 6 dragon toys apartment</li>
+    	<li></li>
+    </ul>
+    <div class="ban_xu"></div>
+    <ul class="ban">
+    	<li>朴上品牌设计工作室版权所有</li>
+    	<li>www.pushangcd.com</li>
+    	<li>2016.1.15</li>
+    </ul>
+	</div>
+  <!--分享功能-->
+  <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+  <script src="js/share.js"></script>
+  <script>
+    $(function(){
+        var $config = {
+        url    : 'www.pushangcd.com', // 网址，默认使用 window.location.href
+        site   : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+        title  : '这个是tittle', // 标题，默认读取 document.title
+        description : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+        iamge    : '', // 图片, 默认取网页中第一个img标签
+        target : '_blank' //打开方式
+       };
 
-		<div class="span24">
-			<div id="hotProduct" class="hotProduct clearfix">
-					<div class="title">
-						<strong>热门商品</strong>
-						<!-- <a  target="_blank"></a> -->
-					</div>
-					<ul class="tab">
-							<li class="current">
-								<a href="./蔬菜分类.htm?tagIds=1" target="_blank"></a>
-							</li>
-							<li>
-								<a  target="_blank"></a>
-							</li>
-							<li>
-								<a target="_blank"></a>
-							</li>
-					</ul>
-<!-- 					<div class="hotProductAd">
-			<img src="${pageContext.request.contextPath}/image/a.jpg" width="260" height="343" alt="热门商品" title="热门商品">
-</div> -->
-						<ul class="tabContent" style="display: block;">
-							<s:iterator var="p" value="hList">
-									<li>
-										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
-									</li>
-							</s:iterator>		
-						</ul>
-						<ul class="tabContent" style="display: none;">
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/c5b1b396-181a-4805-9e68-9b400d71f91e-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/c5b1b396-181a-4805-9e68-9b400d71f91e-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/4107e1ce-5e7c-4941-bc0f-718f35ba14cd-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4107e1ce-5e7c-4941-bc0f-718f35ba14cd-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/6f8ae4bf-cbd3-41c7-aa22-0fe81db6add4-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/6f8ae4bf-cbd3-41c7-aa22-0fe81db6add4-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/3d835c07-08c5-46d7-912d-adcd41f8c8e6-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/3d835c07-08c5-46d7-912d-adcd41f8c8e6-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/5e5be432-fbee-4bdd-a7bd-a92e01f9bfc4-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/5e5be432-fbee-4bdd-a7bd-a92e01f9bfc4-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/40e34b2d-d240-446e-9874-89969edbe89f-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/40e34b2d-d240-446e-9874-89969edbe89f-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/a8db4410-05e5-4dfa-8217-eb885a104af3-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/a8db4410-05e5-4dfa-8217-eb885a104af3-thumbnail.jpg" style="display: block;"></a>
-									</li>
-						</ul>
-						<ul class="tabContent" style="display: none;">
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/9f164e13-bcaa-48a6-9b35-0ca96629f614-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/9f164e13-bcaa-48a6-9b35-0ca96629f614-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/c41d0347-364c-42bb-baeb-25142c1ed167-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/c41d0347-364c-42bb-baeb-25142c1ed167-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/2af8be8a-75b9-41ae-b009-a7c54b685a4e-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/2af8be8a-75b9-41ae-b009-a7c54b685a4e-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/1a3ad7de-7ee9-4530-b89a-46375219beb5-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/1a3ad7de-7ee9-4530-b89a-46375219beb5-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/ea566af4-0cdb-4017-a8c7-27e407794204-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/ea566af4-0cdb-4017-a8c7-27e407794204-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/dea31d42-fa3e-4b69-a631-51ca7c79f032-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/dea31d42-fa3e-4b69-a631-51ca7c79f032-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/1c81f492-a3d7-4c06-8658-bc2c76808cd3-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/1c81f492-a3d7-4c06-8658-bc2c76808cd3-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/f1174ca6-6bdf-4d0b-86e6-5455bc8e89ad-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/f1174ca6-6bdf-4d0b-86e6-5455bc8e89ad-thumbnail.jpg" style="display: block;"></a>
-									</li>
-						</ul>
-			</div>
-		</div>
-		<div class="span24">
-			<div id="newProduct" class="newProduct clearfix">
-					<div class="title">
-						<strong>最新商品</strong>
-						<a  target="_blank"></a>
-					</div>
-					<ul class="tab">
-							<li class="current">
-								<a href="./蔬菜分类.htm?tagIds=2" target="_blank"></a>
-							</li>
-							<li>
-								<a  target="_blank"></a>
-							</li>
-							<li>
-								<a target="_blank"></a>
-							</li>
-					</ul>
-<!-- 					<div class="newProductAd">
-									<img src="${pageContext.request.contextPath}/image/q.jpg" width="260" height="343" alt="最新商品" title="最新商品">
-						</div>
-						 -->						
-						 <ul class="tabContent" style="display: block;">
-						 	<s:iterator var="p" value="nList">
-									<li>
-										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg" style="display: block;"></a>									</li>
-									</li>
-							</s:iterator>		
-						</ul>
-						<ul class="tabContent" style="display: none;">
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/b04a22f5-267d-4e33-ac58-dda941eeaf84-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/b04a22f5-267d-4e33-ac58-dda941eeaf84-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/ca3043f5-dbb0-4a03-9bb6-8274f78b5d7e-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/ca3043f5-dbb0-4a03-9bb6-8274f78b5d7e-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/a2ac0816-37e4-477a-b179-e64f71252cf5-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/a2ac0816-37e4-477a-b179-e64f71252cf5-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/fbb80ec8-a1d3-49de-b83b-79eae4b1ff69-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/fbb80ec8-a1d3-49de-b83b-79eae4b1ff69-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/bb99deac-0b33-48f1-a3ad-e8310516be07-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/bb99deac-0b33-48f1-a3ad-e8310516be07-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/7b3c0647-1016-4d13-8b84-4d63818e1179-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/7b3c0647-1016-4d13-8b84-4d63818e1179-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/3c79f82f-f136-48aa-9e81-7e10fbb3de2a-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/3c79f82f-f136-48aa-9e81-7e10fbb3de2a-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/b998f840-91fc-41b6-b73d-70587babf760-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/b998f840-91fc-41b6-b73d-70587babf760-thumbnail.jpg" style="display: block;"></a>
-									</li>
-						</ul>
-						<ul class="tabContent" style="display: none;">
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/9f164e13-bcaa-48a6-9b35-0ca96629f614-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/9f164e13-bcaa-48a6-9b35-0ca96629f614-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/1a3ad7de-7ee9-4530-b89a-46375219beb5-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/1a3ad7de-7ee9-4530-b89a-46375219beb5-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/7acae4ac-5909-4142-8b20-19c5462859d6-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/7acae4ac-5909-4142-8b20-19c5462859d6-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/ea566af4-0cdb-4017-a8c7-27e407794204-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/ea566af4-0cdb-4017-a8c7-27e407794204-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/dea31d42-fa3e-4b69-a631-51ca7c79f032-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/dea31d42-fa3e-4b69-a631-51ca7c79f032-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/1c81f492-a3d7-4c06-8658-bc2c76808cd3-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/1c81f492-a3d7-4c06-8658-bc2c76808cd3-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/f1174ca6-6bdf-4d0b-86e6-5455bc8e89ad-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/f1174ca6-6bdf-4d0b-86e6-5455bc8e89ad-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/2971c96e-9f11-4491-9faf-9ea7e1fec53c-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/2971c96e-9f11-4491-9faf-9ea7e1fec53c-thumbnail.jpg" style="display: block;"></a>
-									</li>
-						</ul>
-			</div>
-		</div>
-		<div class="span24">
-			<div class="friendLink">
-				<dl>
-					<dt>新手指南</dt>
-							<dd>
-								<a  target="_blank">支付方式</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">配送方式</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">售后服务</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">购物帮助</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">蔬菜卡</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">礼品卡</a>
-								|
-							</dd>
-							<dd>
-								<a target="_blank">银联卡</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">亿家卡</a>
-								|
-							</dd>
-							
-					<dd class="more">
-						<a >更多</a>
-					</dd>
-				</dl>
-			</div>
-		</div>
-	</div>
-<div class="container footer">
-	<div class="span24">
-		<div class="footerAd">
-					<img src="${pageContext.request.contextPath}/image/footer.jpg" width="950" height="52" alt="我们的优势" title="我们的优势">
-</div>	</div>
-	<div class="span24">
-		<ul class="bottomNav">
-					<li>
-						<a>关于我们</a>
-						|
-					</li>
-					<li>
-						<a>联系我们</a>
-						|
-					</li>
-					<li>
-						<a>招贤纳士</a>
-						|
-					</li>
-					<li>
-						<a>法律声明</a>
-						|
-					</li>
-					<li>
-						<a>友情链接</a>
-						|
-					</li>
-					<li>
-						<a target="_blank">支付方式</a>
-						|
-					</li>
-					<li>
-						<a target="_blank">配送方式</a>
-						|
-					</li>
-					<li>
-						<a>服务声明</a>
-						|
-					</li>
-					<li>
-						<a>广告声明</a>
-						
-					</li>
-		</ul>
-	</div>
-	<div class="span24">
-		<div class="copyright">Copyright © 2005-2015 网上商城 版权所有</div>
-	</div>
-</div>
+    $('.sns-share').share($config);
+    });
+</script>
 </body>
 </html>
