@@ -17,7 +17,7 @@ import cn.itcast.shop.utils.PageHibernateCallback;
 /**
  * 商品持久层的代码
  * 
- * @author 传智.郭嘉
+ * @author 
  * 
  */
 public class ProductDao extends HibernateDaoSupport {
@@ -32,7 +32,7 @@ public class ProductDao extends HibernateDaoSupport {
 		criteria.addOrder(Order.desc("pdate"));
 		// 执行查询:
 		List<Product> list = this.getHibernateTemplate().findByCriteria(
-				criteria, 0, 10);
+				criteria, 0, 20);  // 可以自定义首页的热门的照片
 		return list;
 	}
 

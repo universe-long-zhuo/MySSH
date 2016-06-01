@@ -39,13 +39,13 @@ public class IndexAction extends ActionSupport{
 		ActionContext.getContext().getSession().put("cList", cList);
 		// 查询热门商品:
 		List<Product> hList = productService.findHot();
-		System.out.println("首页1：" + hList);
+		System.out.println("首页1h：" + hList);
 		
 		// 保存到值栈中:
 		ActionContext.getContext().getValueStack().set("hList", hList);
 		// 查询最新商品:
 		List<Product> nList = productService.findNew();
-		System.out.println("首页1：" + nList);
+		System.out.println("首页2n：" + nList);
 		
 		// 保存到值栈中:
 		ActionContext.getContext().getValueStack().set("nList", nList);
